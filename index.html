@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <title>LINE 立即試用</title>
+
+  <!-- 字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+TC:wght@800;900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    const FB_PIXEL_ID = "你的FB_PIXEL_ID";
+
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version="2.0";
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    fbq("init", FB_PIXEL_ID);
+    fbq("track", "PageView");
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #0798a4;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page {
+      position: relative;
+      width: min(100vw, calc(100dvh * 927 / 1648));
+      height: min(100dvh, calc(100vw * 1648 / 927));
+      overflow: hidden;
+      background: linear-gradient(135deg, #0095a6 0%, #18aa9d 43%, #8be354 100%);
+    }
+
+    .line-logo {
+      position: absolute;
+      top: 28.2%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 9.2%;
+      font-weight: 900;
+      letter-spacing: 0.055em;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .white-line {
+      position: absolute;
+      top: 38.4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 69.6%;
+      height: 1.32%;
+      background: #ffffff;
+      border-radius: 999px;
+    }
+
+    .line-button {
+      position: absolute;
+      top: 46.1%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92.6%;
+      height: 12.4%;
+      border: clamp(10px, 2.25vw, 20px) solid #ffffff;
+      border-radius: 999px;
+      background: #8be354;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .button-text {
+      color: rgba(0, 0, 0, 0.68);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      font-size: 6.15%;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      white-space: nowrap;
+      transform: scaleX(1.02);
+      text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.22),
+        4px 4px 0 rgba(0, 0, 0, 0.12);
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        width: 100vw;
+        height: 100dvh;
+      }
+
+      .line-logo {
+        top: 28.2%;
+        font-size: 9.2%;
+      }
+
+      .white-line {
+        top: 38.4%;
+      }
+
+      .line-button {
+        top: 46.1%;
+        border-width: 11px;
+      }
+
+      .button-text {
+        font-size: 6.05%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=你的FB_PIXEL_ID&ev=PageView&noscript=1"
+    />
+  </noscript>
+
+  <main class="page">
+    <div class="line-logo">LINE</div>
+
+    <div class="white-line"></div>
+
+    <a class="line-button" href="javascript:void(0)" onclick="clickLineTrial()">
+      <span class="button-text">點擊加LINE立即試用</span>
+    </a>
+  </main>
+
+  <script>
+    const LINE_URL = "https://lin.ee/你的LINE連結";
+
+    function clickLineTrial() {
+      if (typeof fbq === "function") {
+        fbq("trackCustom", "ClickLineTrial", {
+          button_name: "點擊加LINE立即試用",
+          page_type: "line_original_style",
+          traffic_source: "meta_ads"
+        });
+
+        fbq("track", "Lead", {
+          content_name: "點擊加LINE立即試用"
+        });
+      }
+
+      setTimeout(function () {
+        window.location.href = LINE_URL;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
